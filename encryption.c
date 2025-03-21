@@ -5,6 +5,7 @@
 
 void encrypt(FILE* file, FILE* encrypted_file, FILE* key_file) {
     srand(time(NULL) ^ (getpid() << 16));
+    
     int character;
     while((character = fgetc(file)) != EOF) {
         int key = rand();

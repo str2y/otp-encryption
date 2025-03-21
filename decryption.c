@@ -3,6 +3,7 @@
 
 void decrypt(FILE* encrypted_file, FILE* key_file, FILE* decrypted_file) {
     int encrypted_character;
+    
     while((encrypted_character = fgetc(encrypted_file)) != EOF) {
         int key_character = fgetc(key_file);
         int decrypted_character = encrypted_character ^ key_character;
