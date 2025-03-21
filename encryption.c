@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
 
 void encrypt(FILE* file, FILE* encrypted_file, FILE* key_file) {
+    srand(time(NULL) ^ (getpid() << 16));
     int character;
     while((character = fgetc(file)) != EOF) {
         int key = rand();
